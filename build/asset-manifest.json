@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/FVeskrna.gitbub.io/static/css/main.31d6cfe0.css",
+    "main.js": "/FVeskrna.gitbub.io/static/js/main.241d1900.js",
+    "static/js/453.6feb3ef8.chunk.js": "/FVeskrna.gitbub.io/static/js/453.6feb3ef8.chunk.js",
+    "index.html": "/FVeskrna.gitbub.io/index.html",
+    "main.241d1900.js.map": "/FVeskrna.gitbub.io/static/js/main.241d1900.js.map",
+    "453.6feb3ef8.chunk.js.map": "/FVeskrna.gitbub.io/static/js/453.6feb3ef8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31d6cfe0.css",
+    "static/js/main.241d1900.js"
+  ]
+}
