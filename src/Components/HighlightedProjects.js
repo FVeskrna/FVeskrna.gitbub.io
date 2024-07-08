@@ -34,14 +34,25 @@ const HighlightedProjects = () => {
       githubLink: 'https://github.com/your-repo/vr-meeting-room'
     }
   ];
+  const openInNewTab = (url) => {
+    window.open(url, "_blank", "noreferrer");
+  };
 
   const handleProjectClick = (id) => {
-    navigate(`/project/${id}`);
+    switch(id){
+      case 1:
+        openInNewTab(`/project/VRMeetingRoom`);
+      case 2:
+        openInNewTab(`/project/VRWorkshop`);
+      default:
+        openInNewTab(`/project/VRMeetingRoom`);
+    }
+    
   };
 
   return (
     <ProjectsSection id="projects">
-      <h2>Highlighted Projects</h2>
+      <h1>Highlighted Projects</h1>
       <ProjectList>
         {projects.map((project) => (
           <Project key={project.id} onClick={() => handleProjectClick(project.id)}>
@@ -65,7 +76,7 @@ const HighlightedProjects = () => {
 const ProjectsSection = styled.section`
   padding: 2rem;
   color: #333;
-  height: 100vh;
+  min-height: 100vh;
 `;
 
 const ProjectList = styled.div`
@@ -75,16 +86,27 @@ const ProjectList = styled.div`
 `;
 
 const Project = styled.div`
-  background-color: #8d99ae;
+  background-color: #eeeeee;
   margin: 1rem;
-  border-radius: 8px;
+  border-radius: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  width: calc(33% - 2rem);
   cursor: pointer;
   display: flex;
   flex-direction: column;
   transition: transform 0.2s ease;
+
+  @media (min-width: 1200px) {
+    width: calc(33% - 2rem);
+  }
+
+  @media (max-width: 1199px) {
+    width: calc(50% - 2rem);
+  }
+
+  @media (max-width: 768px) {
+    width: calc(100% - 2rem);
+  }
 
   &:hover {
     transform: scale(1.05);
@@ -111,6 +133,12 @@ const ProjectTitle = styled.h3`
 
 const ProjectDescription = styled.p`
   flex-grow: 1;
+  color: #a9a9a9;
+  cursor: pointer;
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
   font-size: 20px;
 `;
 
@@ -118,14 +146,13 @@ const ProjectTags = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-top: 0.5rem;
-  margin-top: auto;
 `;
 
 const Tag = styled.span`
-  background-color: #e94560;
+  background-color: #ee6c4d;
   color: #fff;
   padding: 0.25rem 0.5rem;
-  border-radius: 4px;
+  border-radius: 20px;
   margin: 0.25rem;
 `;
 

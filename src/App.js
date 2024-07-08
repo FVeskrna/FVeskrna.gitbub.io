@@ -1,20 +1,20 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import GlobalStyle from './GlobalStyle'
+import GlobalStyle from './GlobalStyle';
 import Header from './Components/Header';
 import Hero from './Components/Hero';
 import HighlightedProjects from './Components/HighlightedProjects';
 import NoteworthyProjects from './Components/NoteworthyProjects';
 import ContactForm from './Components/ContactForm';
 import ExperienceSection from './Components/ExperienceSection';
-import ProjectDetail from './Components/ProjectDetail';
-
+import VRMeetingRoom from './Components/VRMeetingRoom';
+import VRWorkshop from './Components/VRWorkshop';
 
 const App = () => {
   useEffect(() => {
     const handleScroll = (event) => {
       event.preventDefault();
-      const headerHeight = 40; // Adjust according to your header height
+      const headerHeight = 80;
       const direction = event.deltaY > 0 ? 'down' : 'up';
       const sections = document.querySelectorAll('section');
       const currentSectionIndex = Math.floor(window.scrollY / window.innerHeight);
@@ -27,10 +27,24 @@ const App = () => {
       }
 
       const targetSection = sections[targetSectionIndex];
-      window.scrollTo({
-        top: targetSection.offsetTop - headerHeight,
-        behavior: 'smooth',
-      });
+
+      if (targetSection) {
+        if(targetSection === sections[0]){
+          window.scrollTo({
+            top: targetSection.offsetTop - headerHeight,
+            behavior: 'smooth',
+          });
+        }
+        else{
+          window.scrollTo({
+            top: targetSection.offsetTop,
+            behavior: 'smooth',
+          });
+        }
+        
+      } else {
+        console.warn('Target section not found.');
+      }
     };
 
     window.addEventListener('wheel', handleScroll);
@@ -41,14 +55,15 @@ const App = () => {
 
   return (
     <>
-    <GlobalStyle />
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/project/:id" element={<ProjectDetailPage />} />
-      </Routes>
-    </Router>
+      <GlobalStyle />
+      <Router>
+      <Header/>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/project/VRMeetingRoom" element={<VRMeetingRoom/>} />
+          <Route path="/project/VRWorkshop" element={<VRWorkshop />} />
+        </Routes>
+      </Router>
     </>
   );
 };
@@ -57,9 +72,9 @@ const MainPage = () => {
   return (
     <>
       <Hero />
+      <ExperienceSection />
       <HighlightedProjects />
       <NoteworthyProjects />
-      <ExperienceSection />
       <ContactForm />
     </>
   );
@@ -68,7 +83,7 @@ const MainPage = () => {
 const ProjectDetailPage = () => {
   return (
     <>
-      <ProjectDetail />
+      <VRMeetingRoom />
     </>
   );
 };

@@ -31,7 +31,7 @@ const NoteworthyProjects = () => {
 
   return (
     <ProjectsSection id="noteworthy-projects">
-      <h2>Noteworthy Projects</h2>
+      <h1>Noteworthy Projects</h1>
       <ProjectList>
         {projects.map((project) => (
           <Project key={project.id} onClick={() => handleProjectClick(project.id)}>
@@ -54,7 +54,7 @@ const NoteworthyProjects = () => {
 const ProjectsSection = styled.section`
   padding: 2rem;
   color: #333;
-  height: 90vh;
+  min-height: 100vh;
 `;
 
 const ProjectList = styled.div`
@@ -65,7 +65,7 @@ const ProjectList = styled.div`
 `;
 
 const Project = styled.div`
-  background-color: #fff;
+  background-color: #eeeeee;
   margin: 1rem 0;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -98,13 +98,21 @@ const ProjectTitle = styled.h3`
 
 const ProjectDescription = styled.p`
   margin: 0;
+  flex-grow: 1;
+  color: #a9a9a9;
+  cursor: pointer;
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 20px;
 `;
 
 const Tag = styled.span`
-  background-color: #e94560;
+  background-color: #ee6c4d;
   color: #fff;
   padding: 0.25rem 0.5rem;
-  border-radius: 4px;
+  border-radius: 20px;
   margin-right: 0.5rem;
   white-space: nowrap;
 `;

@@ -30,10 +30,9 @@ const FormSection = styled.section`
   padding: 2rem;
   text-align: center;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   max-width: 600px;
   margin: 2rem auto;
-  height: 85vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -57,12 +56,12 @@ const InputContainer = styled.div`
 const Label = styled.label`
   display: block;
   margin-bottom: 0.5rem;
-  color: #fff;
-  font-family: "Roboto Mono", monospace;
+  color: #343a40;
+  font-family: "Rubik", sans-serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 500;
   font-style: normal;
-  font-size: 20px;
+  font-size: 25px;
 `;
 
 const Input = styled.input`
@@ -84,22 +83,23 @@ const TextArea = styled.textarea`
 
 const Button = styled.button`
   width: 100%;
-  background-color: #e94560;
+  background-color: #ee6c4d;
   color: #fff;
   padding: 0.75rem 1.5rem;
   border: none;
-  border-radius: 4px;
+  border-radius: 20px;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 476;
   font-style: normal;
-  font-size: 20px;
+  font-variation-settings:
+  "slnt" 0;
 
   &:hover {
-    background-color: #e98860;
+    background-color: #ee6c4d;
   }
 `;
 

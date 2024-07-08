@@ -25,6 +25,11 @@ const HeroSection = styled.section`
   background: none;
   color: #fff;
   text-align: center;
+
+  @media (max-width: 768px) {
+    margin-top: 0px; /* Adjust this value according to the header height */
+    flex-direction: column;
+  }
 `;
 
 const HeroContent = styled.div`
@@ -33,6 +38,11 @@ const HeroContent = styled.div`
   align-items: center;
   text-align: left;
   max-width: 800px;
+
+  @media (max-width: 768px) {
+    text-align: center;
+    order: 1;
+  }
 `;
 
 const HeroImage = styled.img`
@@ -40,6 +50,13 @@ const HeroImage = styled.img`
   height: 435px; /* Adjust image height as needed */
   border-radius: 50%; /* Make the image round */
   z-index: 1001;
+
+  @media (max-width: 768px) {
+    width: 80%; /* Adjust image width for mobile */
+    height: auto;
+    margin-top: 20px;
+    order: 2;
+  }
 `;
 
 export default Hero;
