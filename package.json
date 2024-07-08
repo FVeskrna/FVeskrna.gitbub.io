@@ -1,7 +1,7 @@
 {
   "name": "portfolio-site-fv",
   "version": "0.1.0",
-  "homepage": "https://fveskrna.github.io/",
+  "homepage": "https://fveskrna.github.io/FVeskrnaPortfolio",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",

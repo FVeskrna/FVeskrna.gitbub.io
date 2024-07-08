@@ -10,6 +10,8 @@ import ExperienceSection from './Components/ExperienceSection';
 import VRMeetingRoom from './Components/VRMeetingRoom';
 import VRWorkshop from './Components/VRWorkshop';
 
+const basename = process.env.NODE_ENV === 'production' ? '/FVeskrnaPortfolio' : '/';
+
 const App = () => {
   useEffect(() => {
     const handleScroll = (event) => {
@@ -56,7 +58,7 @@ const App = () => {
   return (
     <>
       <GlobalStyle />
-      <Router>
+      <Router basename={basename}>
       <Header/>
         <Routes>
           <Route path="/" element={<MainPage />} />
